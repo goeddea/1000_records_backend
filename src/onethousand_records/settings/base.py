@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'beam',
+    'beam.themes.bootstrap4',  # or choose any theme you like
+    'crispy_forms',  # required by the bootstrap4 theme
     'records',
     'reviews',
 ]
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'onethousand_records.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Path(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -19,6 +19,9 @@ class Link(models.Model):
 class Artist(models.Model):
     name = models.CharField(max_length=500)
 
+    def __str__(self):
+        return self.name
+
 
 class ArtistLink(Link):
     artist = models.ForeignKey(Artist, related_name="links", on_delete=models.CASCADE)
@@ -27,6 +30,9 @@ class ArtistLink(Link):
 class Record(models.Model):
     artist = models.ManyToManyField(Artist, related_name="records")
     title = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.title
 
 
 class RecordLink(Link):

@@ -1,2 +1,2 @@
 django
-
+-e git+https://github.com/django-beam/django-beam.git#egg=django_beam
